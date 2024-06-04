@@ -62,12 +62,8 @@ public:
         bool temukanAkun = false;
         for (const auto& acc : akun) {
             if (acc.NomorRekening == norek) {
-                cout << left << setw(20) << "Nomor Rekening"
-                    << left << setw(20) << "Username"
-                    << left << setw(20) << "Saldo" << endl;
-                cout << left << setw(20) << acc.NomorRekening
-                    << left << setw(20) << acc.UserName
-                    << left << setw(20) << "Rp" + acc.saldo << endl;
+                cout << left << setw(20) << "Nomor Rekening" << left << setw(20) << "Username" << left << setw(20) << "Saldo" << endl;
+                cout << left << setw(20) << acc.NomorRekening << left << setw(20) << acc.UserName << left << setw(20) << "Rp" + acc.saldo << endl;
                 temukanAkun = true;
                 break;
             }
@@ -257,6 +253,7 @@ int main() {
                 goto menu;
             }
             cout << "Masukkan nomor rekening akun yang dicari: "; cin >> NomorRekening;
+            cout << endl;
             indeks = bank.cariNomorRekening(NomorRekening);
             if (indeks != -1){
                 bank.informasiAkun(NomorRekening);
